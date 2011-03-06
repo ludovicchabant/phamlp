@@ -14,6 +14,7 @@ Since the original Google Code project seems abandoned, this is an attempt to ge
 * [Issue 74](http://code.google.com/p/phamlp/issues/detail?id=74): SassNestedRenderer: Missing argument, caused by SassNestedRenderer [resolved](https://github.com/MarcWeber/phamlp/commit/bf1408462be7dec6885b9a7dfe666b66f4f6a0df)
 * [Issue 75](http://code.google.com/p/phamlp/issues/detail?id=75): Function font_files has incorrect brackets [resolved](https://github.com/MarcWeber/phamlp/commit/e271c2dd018dad0dfa25fa8f41b7a9b1b455abe8)
 * [Issue 78](http://code.google.com/p/phamlp/issues/detail?id=78): wrong darken value [resolved](https://github.com/MarcWeber/phamlp/commit/43032beaf0d892ecfc4fd08742ca26817fbaa226)
+* [Issue 86](http://code.google.com/p/phamlp/issues/detail?id=86): != &= implementation is missing [resolved](https://github.com/MarcWeber/phamlp/commit/2b0ce57083cabd4b621a45e96e012bfe728ca229)
 
 
 ### Unresolved (added to GitHub issues)
@@ -46,7 +47,5 @@ Since the original Google Code project seems abandoned, this is an attempt to ge
 * [Issue 82](http://code.google.com/p/phamlp/issues/detail?id=82): sass assets for CakePHP does not support plugins
 * [Issue 83](http://code.google.com/p/phamlp/issues/detail?id=83): No Exception thrown when compiling scss files
 * [Issue 84](http://code.google.com/p/phamlp/issues/detail?id=84): Warning: dirname() expects parameter 1 to be string, array given in /var/www/domains/sinwolf.com/www/cms/application/classes/packager/plugins/phamlp/sass/SassFile.php on line 79
-* [Issue 85](http://code.google.com/p/phamlp/issues/detail?id=85): This project is dead, don't bother post issue
-* [Issue 86](http://code.google.com/p/phamlp/issues/detail?id=86): != &= implementation is missing
 * [Issue 87](http://code.google.com/p/phamlp/issues/detail?id=87): Haml - Escaping differs from original haml
 * [Issue 88](http://code.google.com/p/phamlp/issues/detail?id=88): Haml - allows nesting that original haml does not
