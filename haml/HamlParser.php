@@ -447,6 +447,7 @@ class HamlParser {
 	 * @return HamlRootNode the root of this document tree
 	 */
 	private function toTree($source) {
+		$source = str_replace(array("\r\n", "\n\r", "\r"), "\n", $source);
 		$this->source = explode("\n", $source);
 		$this->setIndentChar();
 
