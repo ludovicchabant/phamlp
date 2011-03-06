@@ -90,6 +90,6 @@ class SassIfNode extends SassNode {
 	 * or "else if" node
 	 */
 	private function isElse() {
-	  return empty($this->expression);
+	  return ($this->expression=='');
 	}
 }
