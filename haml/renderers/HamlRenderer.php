@@ -1,5 +1,5 @@
 <?php
-/* SVN FILE: $Id$ */
+/* SVN FILE: $Id: HamlRenderer.php 93 2010-05-20 17:43:41Z chris.l.yates $ */
 /**
  * HamlRenderer class file.
  * @author			Chris Yates <chris.l.yates@gmail.com>
@@ -70,11 +70,26 @@ class HamlRenderer {
 			if (is_integer($name)) {  // attribute function
 						$output .= " $value";
 			}
-			elseif ($name == $value &&
+			elseif ($name == $value && in_array($name, $this->minimizedAttributes) &&
 				($this->format === 'html4' || $this->format === 'html5')) {
 						$output .= " $name";
 			}
-			else {
+			elseif(in_array($name, $this->minimizedAttributes))
+			{
+				// $value is a variable, isset is called to make sure E_NOTICE is not thrown
+				if(preg_match("/^\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*$/", trim($value)))
+				{
+					$output .= "<"."?php if(isset($value) && !empty($value)): ?"."> $name={$this->attrWrapper}<"."?php echo $value; ?".">{$this->attrWrapper};<"."?php endif; ?".">";
+				}
+				
+				// $value is either a method, a constant or a ternary operator
+				else
+				{
+					$output .= "<"."?php if($value): ?"."> $name={$this->attrWrapper}<"."?php echo $value; ?".">{$this->attrWrapper};<"."?php endif; ?".">";					
+				}
+			} 
+			else
+			{
 				$output .= " $name={$this->attrWrapper}$value{$this->attrWrapper}";
 			}
 		}
