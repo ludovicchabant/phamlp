@@ -540,7 +540,7 @@ class SassParser {
 			case SassVariableNode::isa($token):
 				return new SassVariableNode($token);
 				break;
-			case SassPropertyNode::isa($token, $this->property_syntax):
+			case SassPropertyNode::isa(array('token' => $token, 'syntax' => $this->property_syntax)):
 				return new SassPropertyNode($token, $this->property_syntax);
 				break;
 			case SassMixinDefinitionNode::isa($token):
