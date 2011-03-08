@@ -58,7 +58,7 @@ class SassIfNode extends SassNode {
 	  if (is_null($this->else)) {
 	  	$node->parent	= $this->parent;
 	  	$node->root		= $this->root;
-			$this->else		= $node;
+		$this->parent->children[] = $node;
 	  }
 	  else {
 			$this->else->addElse($node);
