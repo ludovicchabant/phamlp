@@ -1,5 +1,5 @@
 <?php
-/* SVN FILE: $Id$ */
+/* SVN FILE: $Id: SassPropertyNode.php 118 2010-09-21 09:45:11Z chris.l.yates@gmail.com $ */
 /**
  * SassPropertyNode class file.
  * @author			Chris Yates <chris.l.yates@gmail.com>
@@ -95,7 +95,7 @@ class SassPropertyNode extends SassNode {
 	 */
 	public function parse($context) {
 	  $return = array();
-	 	if ($this->value!=="") {
+	 	if ($this->value !== "") {
 	  	$node = clone $this;
 			$node->name = ($this->inNamespace() ? "{$this->namespace}-" : '') .
 				$this->interpolate($this->name, $context);
@@ -177,7 +177,18 @@ class SassPropertyNode extends SassNode {
 	 * @param string the property syntax being used
 	 * @return boolean true if the token represents this type of node, false if not
 	 */
-	public static function isa($token, $syntax) {
+	public static function isa($token) {
+
+		if(!is_array($token))
+		{
+			$syntax = 'old';
+		}
+		else
+		{
+			$syntax = $token['syntax'];
+			$token = $token['token'];
+		}
+		
 		$matches = self::match($token, $syntax);
 
 		if (!empty($matches)) {	
