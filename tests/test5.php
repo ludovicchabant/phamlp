@@ -19,6 +19,11 @@ $source = <<<END
 			text-align: left;
         }
     }
+    @else {
+		.test-else-cls {
+			text-align: none;
+        }
+    }
 }
 
 .cls-1 {
