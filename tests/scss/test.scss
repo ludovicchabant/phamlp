@@ -1,21 +1,15 @@
-$base: 24px;
-$border-color: #B2B;
 
-.underline { border-bottom: 1px solid green; }
+@import "compass/css3/font-face";
+* {
+  @include font-face(test, font-files('test.woff', 'woff'));
+}
 
-#header {
-  color: black;
- 
-  border: 1px solid $border-color + #222222;
 
-  .navigation {
-    font-size: $base / 2;
-    a {
-      .underline;
-    }
-  }
-  .logo {
-    width: 300px;
-    :hover { text-decoration: none; }
-  }
+@media    print {
+	* {
+		font-weight: bold;
+	}
+	@page {
+		margin: 1cm;
+	}
 }
