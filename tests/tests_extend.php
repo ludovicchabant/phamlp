@@ -3,7 +3,7 @@
 include "test_inc.php";
 
 class IssuesTest extends ScssUnitTest {
-/*
+
     public function test_extend_issue80(){
         $source = <<<END
 .test {
@@ -25,7 +25,7 @@ END;
 END;
         $this->assertScss($source, $expected);
     }
-*/
+
     public function test_extend3(){
         $source = <<<END
 .test {
